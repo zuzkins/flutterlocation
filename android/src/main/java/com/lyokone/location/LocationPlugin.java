@@ -134,6 +134,9 @@ public class LocationPlugin implements MethodCallHandler, StreamHandler {
                 loc.put("longitude", location.getLongitude());
                 loc.put("accuracy", (double) location.getAccuracy());
                 loc.put("altitude", location.getAltitude());
+                if (location.hasSpeed()) {
+                    loc.put("speed", location.getSpeed())
+                }
                 events.success(loc);
             }
         };
